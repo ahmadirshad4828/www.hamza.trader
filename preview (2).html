@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AHM MetaTrader Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+
+  <div class="sidebar">
+
+    <div class="logo">
+
+      <h1>AHM</h1>
+
+      <p>Hamza Trader</p>
+
+    </div>
+
+    <ul>
+
+      <li>Dashboard</li>
+
+      <li>MetaTrader</li>
+
+      <li>Forex Market</li>
+
+      <li>Crypto Market</li>
+
+      <li>Deposit</li>
+
+      <li>Withdraw</li>
+
+      <li>Trade History</li>
+
+      <li>Settings</li>
+
+      <li>Logout</li>
+
+    </ul>
+
+  </div>
+
+  <!-- Main Content -->
+
+  <div class="main">
+
+    <!-- Topbar -->
+
+    <div class="topbar">
+
+      <div>
+
+        <h2>MetaTrader 5 Dashboard</h2>
+
+      </div>
+
+      <div class="user-box">
+
+        <button id="themeBtn">
+          🌙
+        </button>
+
+        <img 
+          src="https://i.pravatar.cc/40"
+          alt="User"
+        >
+
+      </div>
+
+    </div>
+
+    <!-- Dashboard Cards -->
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>Wallet Balance</h3>
+
+        <h1>$25,000</h1>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Total Profit</h3>
+
+        <h1>+$5,300</h1>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Open Trades</h3>
+
+        <h1>12</h1>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Win Rate</h3>
+
+        <h1>89%</h1>
+
+      </div>
+
+    </div>
+
+    <!-- Open Trade Box -->
+
+    <div class="trade-box">
+
+      <h2>Open MetaTrader Trade</h2>
+
+      <form id="tradeForm">
+
+        <!-- Select Symbol -->
+
+        <select id="symbol">
+
+          <option value="EURUSD">
+            EUR/USD
+          </option>
+
+          <option value="GBPUSD">
+            GBP/USD
+          </option>
+
+          <option value="BTCUSD">
+            BTC/USD
+          </option>
+
+          <option value="XAUUSD">
+            GOLD/USD
+          </option>
+
+        </select>
+
+        <!-- Trade Type -->
+
+        <select id="tradeType">
+
+          <option value="BUY">
+            BUY
+          </option>
+
+          <option value="SELL">
+            SELL
+          </option>
+
+        </select>
+
+        <!-- Lot Size -->
+
+        <input
+          type="number"
+          id="lotSize"
+          placeholder="Enter Lot Size"
+          step="0.01"
+          required
+        >
+
+        <!-- Stop Loss -->
+
+        <input
+          type="number"
+          id="stopLoss"
+          placeholder="Stop Loss"
+        >
+
+        <!-- Take Profit -->
+
+        <input
+          type="number"
+          id="takeProfit"
+          placeholder="Take Profit"
+        >
+
+        <button type="submit">
+
+          Open Trade
+
+        </button>
+
+      </form>
+
+    </div>
+
+    <!-- Recent Trades -->
+
+    <div class="table-box">
+
+      <h2>Recent Trades</h2>
+
+      <table>
+
+        <tr>
+
+          <th>Symbol</th>
+
+          <th>Type</th>
+
+          <th>Lot</th>
+
+          <th>Profit</th>
+
+          <th>Status</th>
+
+        </tr>
+
+        <tr>
+
+          <td>EUR/USD</td>
+
+          <td class="green">
+            BUY
+          </td>
+
+          <td>0.10</td>
+
+          <td class="green">
+            +$120
+          </td>
+
+          <td>
+            Running
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>BTC/USD</td>
+
+          <td class="red">
+            SELL
+          </td>
+
+          <td>0.05</td>
+
+          <td class="red">
+            -$40
+          </td>
+
+          <td>
+            Closed
+          </td>
+
+        </tr>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+
+  <script>
+
+    // Theme Toggle
+
+    const themeBtn = document.getElementById("themeBtn");
+
+    themeBtn.addEventListener("click", () => {
+
+      document.body.classList.toggle("light-mode");
+
+    });
+
+
+    // Trade Form
+
+    document.getElementById("tradeForm")
+    .addEventListener("submit", async (e) => {
+
+      e.preventDefault();
+
+      const data = {
+
+        symbol: document.getElementById("symbol").value,
+
+        tradeType: document.getElementById("tradeType").value,
+
+        lotSize: document.getElementById("lotSize").value,
+
+        stopLoss: document.getElementById("stopLoss").value,
+
+        takeProfit: document.getElementById("takeProfit").value,
+
+      };
+
+      console.log(data);
+
+      alert("Trade Request Sent");
+
+    });
+
+  </script>
+
+</body>
+
+</html>

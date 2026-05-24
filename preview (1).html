@@ -1,0 +1,150 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AHM | Hamza Trader</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <div class="logo">
+      <h2>AHM</h2>
+      <p>Hamza Trader</p>
+    </div>
+
+    <ul>
+      <li>Dashboard</li>
+      <li>Markets</li>
+      <li>Deposit</li>
+      <li>Withdraw</li>
+      <li>History</li>
+      <li>Profile</li>
+      <li>Settings</li>
+      <li>Logout</li>
+    </ul>
+
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+
+      <div>
+        <h1>AI Trading Dashboard</h1>
+      </div>
+
+      <div class="user-box">
+        <button id="themeBtn">🌙</button>
+        <img src="https://i.pravatar.cc/40" />
+      </div>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+      <div class="card">
+        <h3>Total Balance</h3>
+        <h2>$24,580</h2>
+      </div>
+
+      <div class="card">
+        <h3>Total Profit</h3>
+        <h2>+$4,300</h2>
+      </div>
+
+      <div class="card">
+        <h3>Today's Trade</h3>
+        <h2>18 Trades</h2>
+      </div>
+
+      <div class="card">
+        <h3>Win Rate</h3>
+        <h2>87%</h2>
+      </div>
+
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-box">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Deposit Withdraw -->
+    <div class="actions">
+
+      <div class="action-box">
+        <h2>Deposit</h2>
+
+        <input type="number" placeholder="Enter Amount"/>
+
+        <select>
+          <option>USDT</option>
+          <option>BTC</option>
+          <option>Bank Transfer</option>
+        </select>
+
+        <button>Submit Deposit</button>
+      </div>
+
+      <div class="action-box">
+        <h2>Withdraw</h2>
+
+        <input type="number" placeholder="Enter Amount"/>
+
+        <input type="text" placeholder="Wallet Address"/>
+
+        <button>Submit Withdraw</button>
+      </div>
+
+    </div>
+
+    <!-- Trading Table -->
+    <div class="table-box">
+
+      <h2>Recent Trades</h2>
+
+      <table>
+
+        <tr>
+          <th>Pair</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Profit</th>
+        </tr>
+
+        <tr>
+          <td>BTC/USDT</td>
+          <td>Buy</td>
+          <td>$500</td>
+          <td class="green">+$50</td>
+        </tr>
+
+        <tr>
+          <td>ETH/USDT</td>
+          <td>Sell</td>
+          <td>$300</td>
+          <td class="red">-$20</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+  </div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
